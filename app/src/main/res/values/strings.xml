@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">CS 125 final mp</string>
+    <string name="toggle_video">Video</string>
+    <string name="toggle_text">Text</string>
+    <string name="submission_status_label">Submission Saved!</string>
+    <string name="edit_text_button">Type Here!</string>
+    <string name="process_submission_button">Process!</string>
+    <string name="output_text_default">Your processed submission will appear here!</string>
+    <string name="copy_button_text">Copy to Clipboard</string>
 </resources>
