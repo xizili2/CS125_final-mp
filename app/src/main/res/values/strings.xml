@@ -5,13 +5,14 @@
     <string name="submission_status_label">Submission Saved!</string>
     <string name="edit_text_button">Type Here!</string>
     <string name="process_submission_button">Process!</string>
-    <string name="output_text_default">Your processed submission will appear here!</string>
+    <string name="output_text_default">We\'ll have a response for you here!</string>
     <string name="copy_button_text">Copy to Clipboard</string>\
     <string name="see_transcript_text">See Text</string>
     <string name="save_recording_text">Save Recording</string>
     <string name="edittext_dialog_message">Please type what you want to say</string>
     <string name="type_here_hint">Type here~</string>
     <string name="toast_pls_submit">Please record something first!</string>
+    <string name="toast_processing">Submission Received!</string>
     <string name="proud_response">I see you are proud of stuff. That\'s awesome! I\'m a robot, so I have no life accomplishments, but good for you!</string>
     <string name="make_happy_link"><a href="https://www.youtube.com/watch?v=5dsGWM5XGdg">I see you are sad, so click here for a happy surprise! :)</a></string>
 </resources>

@@ -43,7 +43,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ToggleButton toggle; //This will toggle between voice and text mode
     ImageView submissionStatus; //This is the image used to indicate a submission is ready
     ImageView recBtn, stopBtn, playBtn; //This is an image view that serves as the record & pause, stop, and play buttons for recording voice notes
-    TextView lblStatus, outputBox; //The label for the submission-ready indicator, and output textview
+    TextView lblStatus; //The label for the submission-ready indicator, and output textview
+    public static TextView outputBox;
     Button editBtn, processBtn, copyBtn; //Edits text submission, processes, and copies output to clipboard
     Button seeTextBtn, saveVoiceBtn; //Sees transcript of voice note and saves the voice note to the phone
 
@@ -133,12 +134,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         else if (id == processBtn.getId()) {
             //The process submission button was clicked
             if (isTxtSubmitted) {
+                Toast.makeText(getApplicationContext(), R.string.toast_processing,
+                        Toast.LENGTH_SHORT).show();
                 new RetrieveWitAiTask().execute(txtSubmission); //Sends to AI
-                if (isPresentEmotion(witResponse, "Sadness") || isPresentEmotion(witResponse, "Helpless")) {
-                    outputBox.setText(R.string.make_happy_link);
-                } else if (isPresentEmotion(witResponse, "Pride")) {
-                    outputBox.setText(R.string.proud_response);
-                }
             }
             else {
                 Toast.makeText(getApplicationContext(), R.string.toast_pls_submit,
@@ -301,26 +299,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * @param emotion the emotion to identify
      * @return true if the emotion is found, false otherwise
      */
-    public boolean isPresentEmotion(String json, String emotion) {
+    public static boolean isPresentEmotion(String json, String emotion) {
 
-        /*if (json == null) {
-            return false;
-        }
-        JsonObject result = new JsonParser().parse(json).getAsJsonObject();
-        if (result.get("entities") == null) {
-            return false;
-        }
-        result = result.get("entities").getAsJsonObject();
-        if (result.get("Emotions") == null) {
-            return false;
-        }
-        JsonArray resultArr = result.get("Emotions").getAsJsonArray();
-        if (resultArr.size() == 0) {
-            return false;
-        }
-        if (resultArr.contains("Sadness"))
-
-        return false;*/
         if (json == null) {
             return false;
         }

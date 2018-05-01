@@ -2,6 +2,7 @@ package com.example.liz.cs125finalmp;
 
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.TextView;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -52,9 +53,18 @@ public class RetrieveWitAiTask extends AsyncTask<String, Void, String> {
         return null;
     }
 
+    /**
+     * Processes the response and sets the output txt
+     * @param response the response from wit.ai in a normal JSON string
+     */
     protected void onPostExecute(String response) {
         MainActivity.witResponse = response;
         System.out.println("RESPONSE: " + MainActivity.witResponse);
+        if (MainActivity.isPresentEmotion(response, "Sadness") || MainActivity.isPresentEmotion(response, "Helpless")) {
+            MainActivity.outputBox.setText(R.string.make_happy_link);
+        } else if (MainActivity.isPresentEmotion(response, "Pride")) {
+            MainActivity.outputBox.setText(R.string.proud_response);
+        }
 
         // TODO: check this.exception
         // TODO: do something with the feed
