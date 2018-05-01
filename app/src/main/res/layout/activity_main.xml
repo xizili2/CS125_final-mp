@@ -27,7 +27,9 @@
 
         android:checked="true"
         android:textOn="@string/toggle_text"
-        android:textOff="@string/toggle_voice"/>
+        android:textOff="@string/toggle_voice"
+
+        android:visibility="invisible" />
 
     <ImageView
         android:id="@+id/submission_status"
