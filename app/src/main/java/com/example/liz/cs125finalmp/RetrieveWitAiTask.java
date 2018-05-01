@@ -45,7 +45,7 @@ public class RetrieveWitAiTask extends AsyncTask<String, Void, String> {
             }
 
             Log.d(TAG, "Response from wit.ai: " + result.toString());
-            return response.toString();
+            return result.toString();
         } catch (Exception e) {
             Log.e(TAG, "Error in sendToWitAi:\n" + e + "\n" + e.getStackTrace().toString());
         }
@@ -54,6 +54,7 @@ public class RetrieveWitAiTask extends AsyncTask<String, Void, String> {
 
     protected void onPostExecute(String response) {
         MainActivity.witResponse = response;
+        System.out.println("RESPONSE: " + MainActivity.witResponse);
 
         // TODO: check this.exception
         // TODO: do something with the feed
