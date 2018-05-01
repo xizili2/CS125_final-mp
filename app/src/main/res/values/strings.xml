@@ -9,4 +9,8 @@
     <string name="copy_button_text">Copy to Clipboard</string>\
     <string name="see_transcript_text">See Text</string>
     <string name="save_recording_text">Save Recording</string>
+    <string name="edittext_dialog_message">Please type what you want to say</string>
+    <string name="type_here_hint">Type here~</string>
+    <string name="toast_pls_submit">Please record something first!</string>
+    <string name="make_happy_link"><a href="https://www.youtube.com/watch?v=5dsGWM5XGdg">Click here to cheer up :)</a></string>
 </resources>
